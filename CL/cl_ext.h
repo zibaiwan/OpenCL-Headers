@@ -2625,6 +2625,63 @@ clGetImageRequirementsInfoEXT_fn)(
 #define CL_IMAGE_REQUIREMENTS_SLICE_PITCH_ALIGNMENT_EXT  0x1291
 
 #endif
+    
+/***************************************************
+* cl_intel_program_scope_host_pipe                 *
+****************************************************/
+
+#define cl_intel_program_scope_host_pipe 1
+
+#define CL_COMMAND_READ_HOST_PIPE_INTEL_FPGA   0x4214
+#define CL_COMMAND_WRITE_HOST_PIPE_INTEL_FPGA  0x4215
+
+extern CL_API_ENTRY cl_int CL_API_CALL
+clEnqueueReadHostPipeIntelFPGA(
+    cl_command_queue command_queue,
+    cl_program       program,
+    const char*      pipe_symbol,
+    cl_bool          blocking_read,
+    void*            ptr,
+    size_t           size,
+    cl_uint          num_events_in_wait_list,
+    const cl_event*  event_wait_list,
+    cl_event*        event) CL_API_SUFFIX__VERSION_1_0;
+
+extern CL_API_ENTRY cl_int CL_API_CALL
+clEnqueueWriteHostPipeIntelFPGA(
+    cl_command_queue command_queue,
+    cl_program       program,
+    const char*      pipe_symbol,
+    cl_bool          blocking_read,
+    void*            ptr,
+    size_t           size,
+    cl_uint          num_events_in_wait_list,
+    const cl_event*  event_wait_list,
+    cl_event*        event) CL_API_SUFFIX__VERSION_1_0;
+
+typedef cl_int (CL_API_CALL *
+clEnqueueReadHostPipeIntelFPGA_fn)(
+    cl_command_queue command_queue,
+    cl_program       program,
+    const char*      pipe_symbol,
+    cl_bool          blocking_read,
+    void*            ptr,
+    size_t           size,
+    cl_uint          num_events_in_wait_list,
+    const cl_event*  event_wait_list,
+    cl_event*        event) CL_API_SUFFIX__VERSION_1_0;
+
+typedef cl_int (CL_API_CALL *
+clEnqueueWriteHostPipeIntelFPGA_fn)(
+    cl_command_queue command_queue,
+    cl_program       program,
+    const char*      pipe_symbol,
+    cl_bool          blocking_read,
+    void*            ptr,
+    size_t           size,
+    cl_uint          num_events_in_wait_list,
+    const cl_event*  event_wait_list,
+    cl_event*        event) CL_API_SUFFIX__VERSION_1_0;
 
 #ifdef __cplusplus
 }
