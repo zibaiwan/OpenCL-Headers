@@ -2626,62 +2626,61 @@ clGetImageRequirementsInfoEXT_fn)(
 
 #endif
     
-/***************************************************
-* cl_intel_program_scope_host_pipe                 *
-****************************************************/
-
+/**************************
+* cl_intel_program_scope_host_pipe *
+***************************/
 #define cl_intel_program_scope_host_pipe 1
 
-#define CL_COMMAND_READ_HOST_PIPE_INTEL_FPGA   0x4214
-#define CL_COMMAND_WRITE_HOST_PIPE_INTEL_FPGA  0x4215
+/* New return values from clGetEventInfo when param_name is CL_EVENT_COMMAND_TYPE */
+#define CL_COMMAND_READ_HOST_PIPE_INTEL   0x4214
+#define CL_COMMAND_WRITE_HOST_PIPE_INTEL  0x4215
+#define CL_PROGRAM_NUM_HOST_PIPES_INTEL   0x4216
+#define CL_PROGRAM_HOST_PIPE_NAMES_INTEL  0x4217
 
+//TODO Check whether this is needed
+typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueReadHostPipeINTEL_fn)(
+            cl_command_queue command_queue,
+            cl_program program,
+            const char* pipe_symbol,
+            cl_bool blocking_read,
+            void* ptr,
+            size_t size,
+            cl_uint num_events_in_wait_list,
+            const cl_event* event_wait_list,
+            cl_event* event);
 extern CL_API_ENTRY cl_int CL_API_CALL
-clEnqueueReadHostPipeIntelFPGA(
-    cl_command_queue command_queue,
-    cl_program       program,
-    const char*      pipe_symbol,
-    cl_bool          blocking_read,
-    void*            ptr,
-    size_t           size,
-    cl_uint          num_events_in_wait_list,
-    const cl_event*  event_wait_list,
-    cl_event*        event) CL_API_SUFFIX__VERSION_1_0;
+clEnqueueReadHostPipeINTEL(
+            cl_command_queue command_queue,
+            cl_program program,
+            const char* pipe_symbol,
+            cl_bool blocking_read,
+            void* ptr,
+            size_t size,
+            cl_uint num_events_in_wait_list,
+            const cl_event* event_wait_list,
+            cl_event* event);
 
+typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueWriteHostPipeINTEL_fn)(
+            cl_command_queue command_queue,
+            cl_program program,
+            const char* pipe_symbol,
+            cl_bool blocking_write,
+            void* ptr,
+            size_t size,
+            cl_uint num_events_in_wait_list,
+            const cl_event* event_wait_list,
+            cl_event* event);
 extern CL_API_ENTRY cl_int CL_API_CALL
-clEnqueueWriteHostPipeIntelFPGA(
-    cl_command_queue command_queue,
-    cl_program       program,
-    const char*      pipe_symbol,
-    cl_bool          blocking_read,
-    void*            ptr,
-    size_t           size,
-    cl_uint          num_events_in_wait_list,
-    const cl_event*  event_wait_list,
-    cl_event*        event) CL_API_SUFFIX__VERSION_1_0;
-
-typedef cl_int (CL_API_CALL *
-clEnqueueReadHostPipeIntelFPGA_fn)(
-    cl_command_queue command_queue,
-    cl_program       program,
-    const char*      pipe_symbol,
-    cl_bool          blocking_read,
-    void*            ptr,
-    size_t           size,
-    cl_uint          num_events_in_wait_list,
-    const cl_event*  event_wait_list,
-    cl_event*        event) CL_API_SUFFIX__VERSION_1_0;
-
-typedef cl_int (CL_API_CALL *
-clEnqueueWriteHostPipeIntelFPGA_fn)(
-    cl_command_queue command_queue,
-    cl_program       program,
-    const char*      pipe_symbol,
-    cl_bool          blocking_read,
-    void*            ptr,
-    size_t           size,
-    cl_uint          num_events_in_wait_list,
-    const cl_event*  event_wait_list,
-    cl_event*        event) CL_API_SUFFIX__VERSION_1_0;
+clEnqueueWriteHostPipeINTEL(
+            cl_command_queue command_queue,
+            cl_program program,
+            const char* pipe_symbol,
+            cl_bool blocking_write,
+            void* ptr,
+            size_t size,
+            cl_uint num_events_in_wait_list,
+            const cl_event* event_wait_list,
+            cl_event* event);
 
 #ifdef __cplusplus
 }
