@@ -2647,7 +2647,7 @@ typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueReadHostPipeINTEL_fn)(
             size_t size,
             cl_uint num_events_in_wait_list,
             const cl_event* event_wait_list,
-            cl_event* event);
+            cl_event* event) CL_API_SUFFIX__VERSION_1_0;
 extern CL_API_ENTRY cl_int CL_API_CALL
 clEnqueueReadHostPipeINTEL(
             cl_command_queue command_queue,
@@ -2658,7 +2658,7 @@ clEnqueueReadHostPipeINTEL(
             size_t size,
             cl_uint num_events_in_wait_list,
             const cl_event* event_wait_list,
-            cl_event* event);
+            cl_event* event) CL_API_SUFFIX__VERSION_1_0;
 
 typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueWriteHostPipeINTEL_fn)(
             cl_command_queue command_queue,
@@ -2669,7 +2669,7 @@ typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueWriteHostPipeINTEL_fn)(
             size_t size,
             cl_uint num_events_in_wait_list,
             const cl_event* event_wait_list,
-            cl_event* event);
+            cl_event* event) CL_API_SUFFIX__VERSION_1_0;
 extern CL_API_ENTRY cl_int CL_API_CALL
 clEnqueueWriteHostPipeINTEL(
             cl_command_queue command_queue,
@@ -2680,7 +2680,7 @@ clEnqueueWriteHostPipeINTEL(
             size_t size,
             cl_uint num_events_in_wait_list,
             const cl_event* event_wait_list,
-            cl_event* event);
+            cl_event* event) CL_API_SUFFIX__VERSION_1_0;
 
 #ifdef __cplusplus
 }
