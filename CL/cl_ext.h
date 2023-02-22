@@ -2638,7 +2638,7 @@ clGetImageRequirementsInfoEXT_fn)(
 #define CL_PROGRAM_HOST_PIPE_NAMES_INTEL  0x4217
 
 //TODO Check whether this is needed
-typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueReadHostPipeINTEL_fn)(
+typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueReadHostPipeIntelFPGA_fn )(
             cl_command_queue command_queue,
             cl_program program,
             const char* pipe_symbol,
@@ -2660,7 +2660,7 @@ clEnqueueReadHostPipeINTEL(
             const cl_event* event_wait_list,
             cl_event* event) CL_API_SUFFIX__VERSION_1_0;
 
-typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueWriteHostPipeINTEL_fn)(
+typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueWriteHostPipeIntelFPGA_fn)(
             cl_command_queue command_queue,
             cl_program program,
             const char* pipe_symbol,
