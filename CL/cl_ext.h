@@ -2630,6 +2630,7 @@ clGetImageRequirementsInfoEXT_fn)(
 * cl_intel_program_scope_host_pipe *
 ***************************/
 #define cl_intel_program_scope_host_pipe 1
+#define CL_INTEL_PROGRAM_SCOPE_HOST_PIPE_EXTENSION_NAME "cl_intel_program_scope_host_pipe"
 
 /* New return values from clGetEventInfo when param_name is CL_EVENT_COMMAND_TYPE */
 #define CL_COMMAND_READ_HOST_PIPE_INTEL   0x4214
